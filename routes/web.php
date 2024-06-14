@@ -33,6 +33,10 @@ Route::get('/search', function () {
     return Inertia::render('Guest/SearchService');
 });
 
+Route::get('/services', function () {
+    return Inertia::render('Guest/Services');
+})->name('services');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

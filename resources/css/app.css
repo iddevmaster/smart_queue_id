@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: 'TabienFont'; /* Give your font a descriptive name */
+    src: url("/fonts/Sarun's ThangLuang.ttf") format('truetype'); /* Replace with your actual filename */
+    font-weight: normal; /* Optional: Set font weight if needed */
+    font-style: normal; /* Optional: Set font style if needed */
+}
+
+.tabien-text {
+    font-family: 'TabienFont', Arial, sans-serif;
+}
