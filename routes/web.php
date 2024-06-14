@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -26,12 +27,17 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
+
+    $guard = Auth::guard();
+
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard2', function () {
+Route::get('cms/dashboard2', function () {
+    $guard = Auth::guard();
+   
     return Inertia::render('Dashboard2');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['web'])->name('dashboard2');
 
 Route::get('/search', function () {
     return Inertia::render('Guest/SearchService');

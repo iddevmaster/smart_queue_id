@@ -19,7 +19,20 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): Response
     {
+        
         return Inertia::render('Auth/Login', [
+            'canResetPassword' => Route::has('password.request'),
+            'status' => session('status'),
+        ]);
+    }
+
+
+    public function cmscreate(): Response
+    {
+
+      
+        
+        return Inertia::render('Auth/LoginCms', [
             'canResetPassword' => Route::has('password.request'),
             'status' => session('status'),
         ]);
@@ -30,9 +43,25 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
 
-        $request->session()->regenerate();
+      
+
+        // $credentials = $request->only('email', 'password');
+
+        // if (Auth::guard('customer')->attempt($credentials)) {
+        //     $request->session()->regenerate();
+        //    // return redirect()->intended('/dashboard');
+        //    return redirect()->intended(RouteServiceProvider::HOME);
+        // }
+
+        // return redirect()->back()->withErrors(['email' => 'Invalid credentials']);
+     
+    $request->authenticateAdmin();
+
+     $request->session()->regenerate();
+
+     $guard = Auth::guard('web');
+  
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
@@ -42,6 +71,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+
+        \Log::info('destroy');
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();

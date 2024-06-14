@@ -6,6 +6,8 @@ import { Head } from '@inertiajs/vue3';
 <template>
     <Head title="Dashboard" />
     <Authenbackend>
+
+      
         <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
          <p class="text-2xl text-gray-400 dark:text-gray-500">
             <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
@@ -13,5 +15,7 @@ import { Head } from '@inertiajs/vue3';
             </svg>
          </p>
       </div>
+      xxxxxxxxxxxxxxxxxxxxxxx
+      {{ auth }}
     </Authenbackend>
 </template>
