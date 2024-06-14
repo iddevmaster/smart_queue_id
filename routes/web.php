@@ -29,7 +29,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
 
     $guard = Auth::guard();
-
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -37,7 +36,7 @@ Route::get('cms/dashboard2', function () {
     $guard = Auth::guard();
    
     return Inertia::render('Dashboard2');
-})->middleware(['web'])->name('dashboard2');
+})->middleware(['auth'])->name('dashboard2');
 
 Route::get('/search', function () {
     return Inertia::render('Guest/SearchService');
