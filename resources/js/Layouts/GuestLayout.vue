@@ -4,7 +4,7 @@ import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <div class="min-h-screen flex flex-col items-center bg-gray-100">
+    <div class="min-h-screen flex flex-col items-center bg-gray-100 bodybg">
         <div class="container max-w-3xl">
             <header class="md:shadow-lg md:rounded-b-xl">
                 <img src="/images/cover/sit_cover.jpg" class="md:rounded-b-xl" alt="">
@@ -25,3 +25,11 @@ import { Link } from '@inertiajs/vue3';
         </footer>
     </div>
 </template>
+
+<style>
+    .bodybg {
+        background-image: url('/images/cover/cover5.webp');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
