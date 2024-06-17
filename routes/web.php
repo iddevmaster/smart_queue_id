@@ -31,7 +31,23 @@ Route::get('/dashboard', function () {
 
 Route::get('/search', function () {
     return Inertia::render('Guest/SearchService');
-});
+})->name('search');
+
+Route::get('/services', function () {
+    return Inertia::render('Guest/Services');
+})->name('services');
+
+Route::get('/service/{service_id}', function ($service_id) {
+    return Inertia::render('Guest/Service');
+})->name('service');
+
+Route::get('/service/1/booking', function () {
+    return Inertia::render('Guest/Booking');
+})->name('booking');
+
+Route::get('/services/history', function () {
+    return Inertia::render('Guest/ServicesHistory');
+})->name('service.history');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

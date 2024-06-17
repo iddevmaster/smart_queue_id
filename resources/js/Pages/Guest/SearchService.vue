@@ -20,7 +20,8 @@ defineProps({
 
 const form = useForm({
     phone: '',
-    number_plate: '',
+    number_platef: '',
+    number_plateb: '',
     province: '',
     remember: true,
 });
@@ -50,6 +51,7 @@ const submit = () => {
                             type="text"
                             class="mt-1 block w-full"
                             v-model="form.phone"
+                            placeholder="เบอร์โทรศัพท์ที่ท่านลงทะเบียนไว้"
                             required
                             autofocus
 
@@ -61,20 +63,24 @@ const submit = () => {
                     <div class="mt-4">
                         <InputLabel for="number_plate" value="หมายเลขทะเบียนรถ" />
 
-                        <div class="flex align-middle">
+                        <div class="grid grid-cols-5">
                             <TextInput
                                 id="number_platef"
                                 type="text"
-                                class="mt-1 block w-full"
-                                v-model="form.number_plate"
+                                class="mt-1 block col-span-2"
+                                v-model="form.number_platef"
+                                placeholder="เลขหน้า"
+                                maxlength="6"
                                 required
                             />
-                            <p class="mx-2">-</p>
+                            <p class="mx-2 self-center text-center col-span-1">-</p>
                             <TextInput
                                 id="number_plateb"
                                 type="text"
-                                class="mt-1 block w-full"
-                                v-model="form.number_plate"
+                                class="mt-1 block col-span-2"
+                                placeholder="เลขหลัง"
+                                maxlength="6"
+                                v-model="form.number_plateb"
                                 required
                             />
                         </div>
@@ -120,25 +126,42 @@ const submit = () => {
                     <div class="block mt-4">
                         <label class="flex items-center">
                             <Checkbox name="remember" v-model:checked="form.remember" disabled />
-                            <span class="ms-2 text-sm text-gray-600">ฉันยอมรับ<a href="/search" class="text-blue-600 underline ">ข้อกำหนดในการให้บริการ</a>และ<a href="/search" class="text-blue-600 underline ">นโยบายความเป็นส่วนตัว</a></span>
+                            <span class="ms-2 text-sm text-gray-600">ฉันยอมรับ<a href="/search" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ข้อกำหนดในการให้บริการ</a>และ<a href="/search" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">นโยบายความเป็นส่วนตัว</a></span>
                         </label>
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
-                        <!-- <Link
-                            v-if="canResetPassword"
-                            :href="route('password.request')"
-                            class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        <Link
+                            class="text-center group w-full md:w-auto relative hover:bg-indigo-700 inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                            :href="route('services')"
                         >
-                            Forgot your password?
-                        </Link> -->
-
-                        <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                            Log in
-                        </PrimaryButton>
+                            <span class="absolute -start-full transition-all group-hover:start-4">
+                                <svg
+                                class="size-5 rtl:rotate-180"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                >
+                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+                                </svg>
+                            </span>
+                            <span class="w-full text-sm font-medium transition-all group-hover:ms-4"> ค้นหา </span>
+                        </Link>
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="w-full mt-6 px-6 py-4 overflow-hidden text-sm md:text-md" >
+            <p>หากไม่พบข้อมูลที่ค้นหา สามารถดำเนินการได้ดังนี้</p>
+            <ul class="ms-4 space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                <li>
+                    กรณีที่ท่านได้ยื่นความประสงค์เข้ารับบริการกับศูนย์ตรอ.ไอดีแล้ว แต่<span class="text-red-600">ไม่พบ</span>ข้อมูลการค้นหากรุณาติดต่อ <a href="/search" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">@LineOA</a>
+                </li>
+                <li>
+                    หากท่าน<span class="text-red-600">ยังไม่ได้</span>ยื่นความประสงค์เข้ารับบริการกับศูนย์ตรอ.ไอดี กรุณา<a href="/search" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">ติดต่อเจ้าหน้าที่</a> เพื่อยื่นความประสงค์เข้ารับบริการกับศูนย์ตรอ.ไอดี
+                </li>
+            </ul>
         </div>
     </GuestLayout>
 </template>
