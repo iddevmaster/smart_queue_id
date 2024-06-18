@@ -70,13 +70,12 @@ onBeforeUnmount(() => {
                         <h1 class="text-4xl text-white font-bold">คิว - เข้ารับบริการ</h1>
                     </header>
                     <section class="flex flex-col justify-center items-center gap-y-4 py-4 px-2">
-                        <div class="bg-white flex p-2 rounded-lg">
-                            <div class="bg-sky-500 flex flex-col justify-center pb-2 px-4 rounded-xl overflow-hidden self-center justify-self-center border-black border-4 tabien">
+                        <div class="bg-white flex p-2 rounded-lg shadow-lg">
+                            <div class="bg-sky-500 pb-2 px-4 rounded-xl overflow-hidden self-center justify-self-center border-black border-4 tabien">
                                 <div class="flex justify-center xl:text-6xl md:text-5xl sm:text-4xl text-3xl tabien-text gap-x-4">
                                     <p>ทส</p>
                                     <p>1234</p>
                                 </div>
-                                <p class="text-center font-bold tabien-text">ศูนย์ตรอ.ไอดี - SIT</p>
                             </div>
                             <div class="p-2 text-center">
                                 <h2 class="text-xl sm:text-xl xl:text-2xl font-bold">ตรวจสภาพรถ</h2>
@@ -85,13 +84,12 @@ onBeforeUnmount(() => {
                             </div>
                         </div>
 
-                        <div class="bg-white flex p-2 rounded-lg">
-                            <div class="bg-sky-500 flex flex-col justify-center pb-2 px-4 rounded-xl overflow-hidden self-center justify-self-center border-black border-4 tabien">
+                        <div class="bg-white flex p-2 rounded-lg shadow-lg">
+                            <div class="bg-sky-500 pb-2 px-4 rounded-xl overflow-hidden self-center justify-self-center border-black border-4 tabien">
                                 <div class="flex justify-center xl:text-6xl md:text-5xl sm:text-4xl text-3xl tabien-text gap-x-4">
                                     <p>ทส</p>
                                     <p>1234</p>
                                 </div>
-                                <p class="text-center font-bold tabien-text">ศูนย์ตรอ.ไอดี - SIT</p>
                             </div>
                             <div class="p-2 text-center">
                                 <h2 class="text-xl sm:text-xl xl:text-2xl font-bold">ตรวจสภาพรถ</h2>
@@ -119,12 +117,11 @@ onBeforeUnmount(() => {
                         </header>
                         <section class="flex flex-col justify-center items-center p-2">
                             <div class="bg-white flex flex-wrap justify-center gap-2 rounded-lg p-2 my-2">
-                                <div class="bg-sky-500 flex flex-col justify-center pb-2 px-2 rounded-xl overflow-hidden self-center justify-self-center border-black border-2 tabien">
-                                    <div class="flex justify-center text-xl tabien-text gap-x-1">
+                                <div class="bg-sky-500 pb-2 px-2 rounded-xl overflow-hidden self-center justify-self-center border-black border-2 tabien">
+                                    <div class="flex justify-center text-2xl tabien-text gap-x-1">
                                         <p>ทส</p>
                                         <p>1234</p>
                                     </div>
-                                    <p class="text-center font-bold text-xs tabien-text">ศูนย์ตรอ.ไอดี</p>
                                 </div>
                                 <div class="text-center">
                                     <h2 class="font-bold">ตรวจสภาพรถ</h2>
@@ -133,12 +130,11 @@ onBeforeUnmount(() => {
                             </div>
 
                             <div class="bg-white flex flex-wrap justify-center rounded-lg gap-2 p-2 my-2">
-                                <div class="bg-sky-500 flex flex-col justify-center pb-2 px-2 rounded-xl overflow-hidden self-center justify-self-center border-black border-2 tabien">
-                                    <div class="flex justify-center text-xl tabien-text gap-x-1">
+                                <div class="bg-sky-500 pb-2 px-2 rounded-xl overflow-hidden self-center justify-self-center border-black border-2 tabien">
+                                    <div class="flex justify-center text-2xl tabien-text gap-x-1">
                                         <p>ทส</p>
                                         <p>1234</p>
                                     </div>
-                                    <p class="text-center font-bold text-xs tabien-text">ศูนย์ตรอ.ไอดี</p>
                                 </div>
                                 <div class="text-center">
                                     <h2 class="font-bold">ตรวจสภาพรถ</h2>
