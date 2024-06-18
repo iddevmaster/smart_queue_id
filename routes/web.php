@@ -33,10 +33,37 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('cms/dashboard2', function () {
-    $guard = Auth::guard();
+
+    $data = [
+        [
+            'name' => 'Sales',
+            'data' => [65, 59, 80, 81, 56, 55, 40]
+        ]
+    ];
+
+    $options = [
+        'chart' => [
+            'height' => 350,
+            'type' => 'line'
+        ],
+        'xaxis' => [
+            'categories' => ['January', 'February', 'March', 'April', 'May', 'June', 'July']
+        ]
+    ];
+
+    return Inertia::render('Dashboard2', ['chartData' => $data, 'chartOptions' => $options]);
+
+
    
-    return Inertia::render('Dashboard2');
+    // return Inertia::render('Dashboard2');
 })->middleware(['auth'])->name('dashboard2');
+
+Route::group(['prefix' => 'cms'], function () {
+  
+    Route::get('/branch', function () {
+        return Inertia::render('Cms/Branch/Index');
+    })->name('cms.branch');
+});
 
 Route::get('/search', function () {
     return Inertia::render('Guest/SearchService');
