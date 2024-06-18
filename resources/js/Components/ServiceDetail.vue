@@ -167,12 +167,12 @@ const props = defineProps({
             <div class="flex justify-between mb-2">
                 <p class="text-xs mt-1">รับคิวเมื่อ 10/03/2567 10:27:30</p>
                 <div class="flex gap-1">
-                    <button
-                        type="button"
+                    <Link
+                        :href="route('queue.display')"
                         class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-xs px-2 py-1 dark:bg-blue-600 dark:hover:bg-blue-700"
                     >
                         ไปที่หน้าจอคิว
-                    </button>
+                    </Link>
                     <button
                         type="button"
                         class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-lg text-xs px-2 py-1 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"

@@ -49,6 +49,10 @@ Route::get('/services/history', function () {
     return Inertia::render('Guest/ServicesHistory');
 })->name('service.history');
 
+Route::get('/queue/display', function () {
+    return Inertia::render('Guest/QueueDisplay');
+})->name('queue.display');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
