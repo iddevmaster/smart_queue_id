@@ -4,9 +4,7 @@ import { Head, Link, useForm } from "@inertiajs/vue3";
 import Checkbox from '@/Components/Checkbox.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import Dropdown from '@/Components/Dropdown.vue';
 import provinces from '../../data/provinces.js';
 
 defineProps({
@@ -121,6 +119,8 @@ const submit = () => {
                         <datalist name="Province" id="ProvinceList">
                             <option v-for="province in provinces" :value="province.th">{{ province.en }}</option>
                         </datalist>
+
+
                     </div>
 
                     <div class="block mt-4">

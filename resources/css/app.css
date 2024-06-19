@@ -10,6 +10,12 @@
     font-style: normal; /* Optional: Set font style if needed */
 }
 
+.tabien {
+    background-image: url('/images/tabien-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 .tabien-text {
     font-family: 'TabienFont', Arial, sans-serif;
 }

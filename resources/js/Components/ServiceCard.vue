@@ -81,11 +81,3 @@ const props = defineProps({
         </Link>
     </div>
 </template>
-
-<style scoped>
-    .tabien {
-        background-image: url('/images/tabien-background.jpg');
-        background-size: cover;
-        background-position: center;
-    }
-</style>
