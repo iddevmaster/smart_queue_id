@@ -4,7 +4,7 @@
    
     <div class="h-full px-3 pb-4 overflow-y-auto bgsid dark:bg-gray-400">
      <div class="flex items-center justify-center py-4">
-        <img src="/path/to/your/logo.png" alt="Logo" class="h-10 w-10" />
+        <img src="../../../public/images/logo.png" alt="Logo" class="h-10 w-10" />
         <span class="text-white text-xl font-semibold ml-2">Company name</span>
       </div>
       <ul class="space-y-2 font-medium">
