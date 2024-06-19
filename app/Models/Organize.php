@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Organize extends Model
 {
     use HasFactory;
+
+
+    protected $table = 'organization';
+
+    protected $fillable = [
+        'id',
+        'name',
+        'addr',
+        'contact'
+    ];
 }
