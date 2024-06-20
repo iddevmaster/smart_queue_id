@@ -1,13 +1,11 @@
-<script setup>
-import Authenbackend from "@/Layouts/Authenbackend.vue";
-import { Head } from "@inertiajs/vue3";
-</script>
+
 
 <template>
   <Head title="Dashboard" />
   <Authenbackend>
     <div class="container mx-auto p-4 crdfr">
       <hr class="hr-text" data-content="ข้อมูลสาขา">
+      <form @submit.prevent="submit">
       <div class="grid gap-1 md:grid-cols-6 sm:grid-cols-6 xl:grid-cols-6">
         <div class="col-span-4 lg:col-span-2" style="padding: 1.2rem">
           <div
@@ -28,22 +26,27 @@ import { Head } from "@inertiajs/vue3";
             <div class="col-span-full">
               <div class="mt-2">
                 <textarea
-                  id="about"
-                  name="about"
+                  id="name"
+                  name="name"
                   rows="3"
                   placeholder="ชื่อสาขา"
+                 v-model="form.name"
+                 required
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 ></textarea>
+                <InputError class="mt-2" :message="form.errors.name" />
               </div>
             </div>
 
             <div class="col-span-full mb-3">
               <div class="mt-2">
                 <textarea
-                  id="about"
-                  name="about"
+                  id="detail"
+                  name="detail"
                   rows="3"
+                      v-model="form.detail"
                     placeholder="รายละเอียด"
+                    required
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 ></textarea>
               </div>
@@ -74,7 +77,9 @@ import { Head } from "@inertiajs/vue3";
               </span>
               <input
                 type="text"
-                id="website-admin"
+                id="tel"
+                 v-model="form.tel"
+                 required
                 class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Phone"
               />
@@ -105,7 +110,10 @@ import { Head } from "@inertiajs/vue3";
               </span>
               <input
                 type="text"
-                id="website-admin"
+                id="address"
+                name="adress"
+                  v-model="form.address"
+                  required
                 class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Address"
               />
@@ -135,13 +143,16 @@ import { Head } from "@inertiajs/vue3";
               </span>
               <input
                 type="text"
-                id="website-admin"
+                id="social"
+                name="social"
+                  v-model="form.social"
+                  required
                 class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Facebook"
               />
             </div>
 
-
+       
           
           </div>
         </div>
@@ -159,8 +170,10 @@ import { Head } from "@inertiajs/vue3";
               >
               <input
                 type="text"
-                id="password"
-                name="password"
+                id="reserve_day"
+                name="reserve_day"
+                v-model="form.reserve_day"
+                required
                 class="mt-1 block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-blue-300"
               />
               <label for="terms" class="ml-2 block text-sm text-gray-900"
@@ -176,12 +189,14 @@ import { Head } from "@inertiajs/vue3";
     justify-content: center;
 ">
               <label for="terms" class="mr-2 block text-sm text-gray-900"
-                >จองล่วงหน้าสูงสุด</label
+                >ยกเลิกล่วงหน้าขั้นต่ำ</label
               >
               <input
                 type="text"
-                id="password"
-                name="password"
+                id="cancel_day"
+                name="cancel_day"
+                  v-model="form.cancel_day"
+                  required
                 class="mt-1 block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-blue-300"
               />
               <label for="terms" class="ml-2 block text-sm text-gray-900"
@@ -197,18 +212,46 @@ import { Head } from "@inertiajs/vue3";
           <div class="flex items-center" style="
     justify-content: center;
 ">
-         <button type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">ยกเลิก</button>
-              <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">บันทึก</button>
+         <button type="button"  class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">ยกเลิก</button>
+              <button type="submit"  class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">บันทึก</button>
           </div>
         </div>
 
      
       </div>
+      </form>
     </div>
 
     <br />
   </Authenbackend>
 </template>
+<script setup>
+import Authenbackend from "@/Layouts/Authenbackend.vue";
+import { Head, Link, useForm } from '@inertiajs/vue3';
+import InputError from '@/Components/InputError.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+
+const form = useForm({
+    name: '',
+    detail: '',
+    tel: '',
+    address: '',
+    social: '',
+    reserve_day: '',
+    cancel_day: '',
+});
+
+
+
+const submit = () => {
+ console.log(form);
+
+ form.post(route('branch.store'), {
+   
+  });
+  
+};
+</script>
 
 <style scoped>
 .branch-dd {

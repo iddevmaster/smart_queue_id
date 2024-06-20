@@ -63,10 +63,6 @@ Route::group(['prefix' => 'cms'], function () {
 
 
     Route::resource('branch', BranchController::class);
- 
-    // Route::get('/branch', function () {
-    //     return Inertia::render('Cms/Branch/Index');
-    // })->name('cms.branch');
 });
 
 Route::get('/search', function () {

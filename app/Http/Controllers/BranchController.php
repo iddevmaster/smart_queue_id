@@ -13,7 +13,11 @@ class BranchController extends Controller
     public function index()
     {
         //
-        return Inertia::render('Cms/Branch/Index');
+     
+        return Inertia::render('Cms/Branch/Index', [
+            'posts' => 'a',
+            'flash' => session('success'),
+        ]);
     }
 
     /**
@@ -32,6 +36,10 @@ class BranchController extends Controller
     public function store(Request $request)
     {
         //
+
+  
+
+        return Inertia::render('Cms/Branch/Index')->with('success', 'Post created successfully.');
     }
 
     /**

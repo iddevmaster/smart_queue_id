@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('detail');
-            $table->text('contact');
+            $table->text('address');
+            $table->text('tel');
+            $table->text('social');
             $table->integer('reserve_day');
             $table->integer('cancel_day');
             $table->integer('org_id');
