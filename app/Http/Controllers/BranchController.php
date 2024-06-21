@@ -14,10 +14,28 @@ class BranchController extends Controller
     {
         //
      
-        return Inertia::render('Cms/Branch/Index', [
-            'posts' => 'a',
-            'flash' => session('success'),
-        ]);
+        // return Inertia::render('Cms/Branch/Index')->with('alert', [
+        //     'type' => 'success',
+        //     'message' => 'Data has been saved successfully!',
+        // ]);
+
+
+        return Inertia::render('Cms/Branch/Index');
+
+
+        // return redirect()->route('branch.index')->with('flash', [
+        //     'type' => 'success',
+        //     'message' => 'Data has been saved successfully!',
+        // ]);
+
+
+
+    
+
+        // return Inertia::render('Cms/Branch/Index', [
+        //     'type' => 'success',
+        //     'message' => 'Data has been saved successfully!',
+        // ]);
     }
 
     /**
@@ -28,6 +46,9 @@ class BranchController extends Controller
         //
 
         return Inertia::render('Cms/Branch/Create');
+
+
+
     }
 
     /**
@@ -39,7 +60,16 @@ class BranchController extends Controller
 
   
 
-        return Inertia::render('Cms/Branch/Index')->with('success', 'Post created successfully.');
+       // return Inertia::render('Cms/Branch/Index')->with('success', 'Post created successfully.');
+
+
+        return redirect()->route('branch.index')->with('flash', [
+            'success' => 'true',
+            'type' => 'success',
+            'message' => 'Data has been saved successfully!',
+        ]);
+
+
     }
 
     /**

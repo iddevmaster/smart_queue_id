@@ -17,13 +17,13 @@ class Branch extends Model
         'id',
         'name',
         'detail',
-        'contact',
         'address',
         'tel',
         'social',
         'reserve_day',
         'cancel_day',
         'org_id',
+        'images'
     ];
 }
 

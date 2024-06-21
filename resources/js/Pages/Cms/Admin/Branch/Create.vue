@@ -17,7 +17,7 @@
             <a href="#">
               <img
                 class="rounded-t-lg"
-                src="../../../../../public/images/no_photo.jpg"
+                src="../../../../../../public/images/no_photo.jpg"
                 alt=""
               />
             </a>
@@ -232,7 +232,6 @@
 import Authenbackend from "@/Layouts/Authenbackend.vue";
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
 
 const form = useForm({
     name: '',
@@ -247,9 +246,7 @@ const form = useForm({
 
 
 const submit = () => {
- console.log(form);
-
- form.post(route('branch.store'), {
+ form.post(route('managebranch.store'), {
    
   });
   

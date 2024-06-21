@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\ManageBranchController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -60,9 +61,8 @@ Route::get('cms/dashboard2', function () {
 })->middleware(['auth'])->name('dashboard2');
 
 Route::group(['prefix' => 'cms'], function () {
-
-
     Route::resource('branch', BranchController::class);
+    Route::resource('managebranch', ManageBranchController::class);
 });
 
 Route::get('/search', function () {

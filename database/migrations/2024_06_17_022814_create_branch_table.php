@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('branch', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('detail');
-            $table->text('address');
-            $table->text('tel');
-            $table->text('social');
+            $table->string('name')->nullable();
+            $table->string('detail')->nullable();
+            $table->text('address')->nullable();
+            $table->text('tel')->nullable();
+            $table->text('social')->nullable();
+            $table->text('images')->nullable();
             $table->integer('reserve_day');
             $table->integer('cancel_day');
-            $table->integer('org_id');
+            $table->integer('org_id')->nullable();
             $table->timestamps();
         });
     }
