@@ -4,28 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Models\Branch;
+use App\Models\Dpm;
 
-class ManageBranchController extends Controller
+class ManageDpmsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        $query = Branch::query();
-
-        // Apply search filter if query is present
+        //
+        $query = Dpm::query();
         if ($request->has('query')) {
             $query->where('name', 'like', '%' . $request->input('query') . '%');
         }
 
          $items = $query->paginate(10)->appends(['query' => $request->input('query')]);
          
-          return Inertia::render('Cms/Admin/Branch/Index', [
+          return Inertia::render('Cms/Admin/Dpms/Index', [
               'query' => $query,
               'items' => $items,
           ]);
+    
     }
 
     /**
@@ -34,9 +34,7 @@ class ManageBranchController extends Controller
     public function create()
     {
         //
-
-        return Inertia::render('Cms/Admin/Branch/Create');
-
+        return Inertia::render('Cms/Admin/Dpms/Create');
     }
 
     /**
@@ -46,20 +44,15 @@ class ManageBranchController extends Controller
     {
         //
 
-        $branch = new Branch();
-        $branch->name = $request->input('name');
-        $branch->detail = $request->input('detail');
-        $branch->address = $request->input('address');
-        $branch->tel = $request->input('tel');
-        $branch->reserve_day = $request->input('reserve_day');
-        $branch->cancel_day = $request->input('cancel_day');
-        $branch->social = $request->input('social');
-        $branch->save();
+        $dpm = new Dpm();
+        $dpm->code = $request->input('code');
+        $dpm->name = $request->input('name');
+        $dpm->save();
 
 
     
 
-        return redirect()->route('managebranch.index')->with('flash', [
+        return redirect()->route('managedpms.index')->with('flash', [
             'success' => 'true',
             'type' => 'success',
             'message' => 'Data has been saved successfully!',
@@ -80,13 +73,11 @@ class ManageBranchController extends Controller
     public function edit(string $id)
     {
         //
-       
 
-        $resource = Branch::findOrFail($id);
-        return Inertia::render('Cms/Admin/Branch/Edit', [
+        $resource = Dpm::findOrFail($id);
+        return Inertia::render('Cms/Admin/Dpms/Edit', [
             'data' => $resource,
         ]);
-
     }
 
     /**
@@ -94,20 +85,15 @@ class ManageBranchController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        //
 
-
-        $savebranch = Branch::findOrFail($id)->update([
+        $saveorg = Dpm::findOrFail($id)->update([
             'name'=> $request->name,
-            'detail'=> $request->detail,
-            'address'=> $request->address,
-            'tel'=> $request->tel,
-            'social'=> $request->social,
-            'reserve_day'=> $request->reserve_day,
-            'cancel_day'=> $request->cancel_day
+            'code'=> $request->code
         ]);
 
         //
-        return redirect()->route('managebranch.index')->with('flash', [
+        return redirect()->route('managedpms.index')->with('flash', [
             'success' => 'true',
             'type' => 'success',
             'message' => 'Update Data successfully!',
@@ -120,11 +106,9 @@ class ManageBranchController extends Controller
     public function destroy(string $id)
     {
         //
-      
+        $de = Dpm::where('id',$id)->delete();
 
-        $de = Branch::where('id',$id)->delete();
-
-        return redirect()->route('managebranch.index')->with('flash', [
+        return redirect()->route('manageorganize.index')->with('flash', [
             'success' => 'true',
             'type' => 'success',
             'message' => 'Delete Data successfully!',

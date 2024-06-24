@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\ManageBranchController;
+use App\Http\Controllers\ManagedpmsController;
+use App\Http\Controllers\ManageOrganizeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -63,6 +65,8 @@ Route::get('cms/dashboard2', function () {
 Route::group(['prefix' => 'cms'], function () {
     Route::resource('branch', BranchController::class);
     Route::resource('managebranch', ManageBranchController::class);
+    Route::resource('manageorganize', ManageOrganizeController::class);
+    Route::resource('managedpms', ManageDpmsController::class);
 });
 
 Route::get('/search', function () {

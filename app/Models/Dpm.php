@@ -9,11 +9,12 @@ class Dpm extends Model
 {
     use HasFactory;
 
-        
+
     protected $table = 'dpm';
 
     protected $fillable = [
         'id',
-        'name'
+        'name',
+        'code'
     ];
 }

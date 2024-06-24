@@ -7,7 +7,7 @@ import Modal from '@/Components/ModalDelete.vue';
 <script>
 
 export default {
-  name: "AdminBranch",
+  name: "AdminOrganize",
   data() {
     return {
       query: this.query || "",
@@ -22,12 +22,12 @@ export default {
   },
   methods: {
     search() {
-      this.$inertia.get(route("managebranch.index"), { query: this.query });
+      this.$inertia.get(route("manageorganize.index"), { query: this.query });
     },
     editItem(id) {
    
 
-      this.$inertia.get(`/cms/managebranch/${id}/edit`, {
+      this.$inertia.get(`/cms/manageorganize/${id}/edit`, {
     
 
       });
@@ -38,7 +38,7 @@ export default {
       this.branch_id
 
 
-     this.$inertia.delete(`/cms/managebranch/${this.branch_id}`, {
+     this.$inertia.delete(`/cms/manageorganize/${this.branch_id}`, {
         onSuccess: () => {
          console.log('ok');
         },
@@ -76,32 +76,31 @@ export default {
     <div class="container mx-auto">
     <section class="sm:p-5 antialiased">
       <div class="mx-auto lg:px-12">
-    
+  
         <!-- Start coding here -->
-         
+
+        
         <div
           class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden"
         >
-       
-            <div
+        <div
               class="flex border-b-2  flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
             >
               <div class="w-full md:w-1/2 ">
              
                 <div class="relative w-full">
                
-                  <span class="mb-4 text-xl font-extrabold">สาขาทั้งหมด</span>
+                  <span class="mb-4 text-xl font-extrabold">องค์กรทั้งหมด</span>
                 </div>
               </div>
       
             </div>
-       
           <form @submit.prevent="search">
             <div
               class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
             >
               <div class="w-full md:w-1/2">
-                <label for="simple-search" class="sr-only"></label>
+                <label for="simple-search" class="sr-only">Search</label>
                 <div class="relative w-full">
                   <div
                     class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
@@ -150,10 +149,9 @@ export default {
               >
                 <tr>
                   <th scope="col" class="px-4 py-4">#</th>
-                  <th scope="col" class="px-4 py-4">ชื่อสาขา</th>
-                  <th scope="col" class="px-4 py-3">จองล่วงหน้าสูงสุด</th>
-                  <th scope="col" class="px-4 py-3">ยกเลิกล่วงหน้าขั้นต่ำ</th>
-                  <th scope="col" class="px-4 py-3">ภาพ</th>
+                  <th scope="col" class="px-4 py-4">ชื่อหน่วยงาน</th>
+                  <th scope="col" class="px-4 py-3">ที่อยู่</th>
+                  <th scope="col" class="px-4 py-3">ข้อมูลติดต่อ</th>
                   <th scope="col" class="px-4 py-3">
                     <span class="sr-only">จัดการ</span>
                   </th>
@@ -162,8 +160,8 @@ export default {
               <tbody>
                 <tr
                   class="border-b dark:border-gray-700"
-                  v-for="(branchs, index) in items.data"
-                  :key="branchs.id"
+                  v-for="(org, index) in items.data"
+                  :key="org.id"
                 >
                   <th
                     scope="row"
@@ -171,20 +169,14 @@ export default {
                   >
                     {{ index + 1 }}
                   </th>
-                  <td class="px-4 py-3">{{ branchs.name }}</td>
-                  <td class="px-4 py-3">{{ branchs.reserve_day }}</td>
-                  <td class="px-4 py-3">{{ branchs.cancel_day }}</td>
-                  <td class="px-4 py-3">
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
-                      alt="item image"
-                      class="w-16 h-16 object-cover"
-                    />
-                  </td>
+                  <td class="px-4 py-3">{{ org.name }}</td>
+                  <td class="px-4 py-3">{{ org.addr }}</td>
+                  <td class="px-4 py-3">{{ org.contact }}</td>
+                 
                   <td class="px-4 py-3 flex items-center justify-end">
                     <div class="flex item-center justify-center">
                       <button
-                        @click="editItem(branchs.id)" 
+                        @click="editItem(org.id)" 
                         class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110"
                       >
                         <svg
@@ -203,7 +195,7 @@ export default {
                         </svg>
                       </button>
                       <button
-                        @click="confirmDelete(branchs.id)"
+                        @click="confirmDelete(org.id)"
                         class="w-4 mr-2 transform hover:text-red-500 hover:scale-110"
                       >
                         <svg

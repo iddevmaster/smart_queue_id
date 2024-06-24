@@ -7,7 +7,7 @@
 
 
     <div class="container mx-auto p-4 crdfr">
-      <hr class="hr-text" data-content="ข้อมูลสาขา">
+      <hr class="hr-text" data-content="เพิ่มข้อมูลสาขา">
       <form @submit.prevent="submit">
       <div class="grid gap-1 md:grid-cols-6 sm:grid-cols-6 xl:grid-cols-6">
         <div class="col-span-4 lg:col-span-2" style="padding: 1.2rem">

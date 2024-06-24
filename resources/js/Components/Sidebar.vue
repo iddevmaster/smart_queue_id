@@ -272,6 +272,16 @@
             { id: 4, name: 'เพิ่มสาขา', route: '/cms/managebranch/create' },
           ],
         },
+        { id: 4, name: 'องค์กร', route: '/about' ,sf:'<svg class="w-6 h-6 text-gray-200 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M10 3a1 1 0 011 1v1h3.25C14.664 5 15 5.336 15 5.75v9.5c0 .414-.336.75-.75.75H5.75A.75.75 0 015 15.25v-9.5C5 5.336 5.336 5 5.75 5H9V4a1 1 0 011-1zm-2 8v3h4v-3H8zm4-2V7H8v2h4z"/></svg>', submenu: [
+            { id: 7, name: 'องค์กรทั้งหมด', route: '/cms/manageorganize' },
+            { id: 8, name: 'เพิ่มองค์กร', route: '/cms/manageorganize/create' },
+          ],
+        },
+        { id: 5, name: 'ฝ่าย', route: '/about' ,sf:'<svg class="w-6 h-6 text-gray-200 transition duration-75 group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M10 3a1 1 0 011 1v1h3.25C14.664 5 15 5.336 15 5.75v9.5c0 .414-.336.75-.75.75H5.75A.75.75 0 015 15.25v-9.5C5 5.336 5.336 5 5.75 5H9V4a1 1 0 011-1zm-2 8v3h4v-3H8zm4-2V7H8v2h4z"/></svg>', submenu: [
+            { id: 7, name: 'ฝ่ายทั้งหมด', route: '/cms/managedpms' },
+            { id: 8, name: 'เพิ่มฝ่าย', route: '/cms/managedpms/create' },
+          ],
+        },
         // Add more menu items as needed
       ],
     };
