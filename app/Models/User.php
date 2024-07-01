@@ -42,4 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function dpm()
+    {
+
+        return $this->hasOne(Dpm::class, 'id', 'dpm_id');
+    }
 }

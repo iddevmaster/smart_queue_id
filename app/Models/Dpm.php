@@ -17,4 +17,12 @@ class Dpm extends Model
         'name',
         'code'
     ];
+
+
+    
+    public function Dpm()
+    {
+
+        return $this->belongsTo(User::class);
+    }
 }

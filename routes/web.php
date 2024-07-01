@@ -5,6 +5,7 @@ use App\Http\Controllers\BranchController;
 use App\Http\Controllers\ManageBranchController;
 use App\Http\Controllers\ManagedpmsController;
 use App\Http\Controllers\ManageOrganizeController;
+use App\Http\Controllers\ManageUserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -67,6 +68,7 @@ Route::group(['prefix' => 'cms'], function () {
     Route::resource('managebranch', ManageBranchController::class);
     Route::resource('manageorganize', ManageOrganizeController::class);
     Route::resource('managedpms', ManageDpmsController::class);
+    Route::resource('manageuser', ManageUserController::class);
 });
 
 Route::get('/search', function () {
