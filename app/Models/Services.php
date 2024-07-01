@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Services extends Model
 {
     use HasFactory;
+
+    protected $table = 'services';
+
+    protected $fillable = [
+        'id',
+        'name',
+        'office_hours',
+        'weekday',
+        'holiday'
+    ];
 }
+

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Dpm extends Model
 {
     use HasFactory;
+
+
+    protected $table = 'dpm';
+
+    protected $fillable = [
+        'id',
+        'name',
+        'code'
+    ];
 }

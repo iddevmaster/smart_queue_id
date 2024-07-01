@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('dpm', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('code')->nullable();
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

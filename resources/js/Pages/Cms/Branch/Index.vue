@@ -1,18 +1,33 @@
 <script setup>
 import Authenbackend from "@/Layouts/Authenbackend.vue";
 import { Head } from "@inertiajs/vue3";
+
 </script>
 
 <template>
   <Head title="Dashboard" />
   <Authenbackend>
-    <div
-      class="container mx-auto p-4 crdfr" 
-      
-    >
-      <h1 class="text-3xl font-bold mb-6">ข้อมูลสาขา</h1>
-      <div class="grid gap-1  md:grid-cols-6 sm:grid-cols-12 xl:grid-cols-6">
-        <div class="col-span-2">
+
+
+
+
+    <div class="container mx-auto p-4 crdfr">
+      <div class="grid grid-cols-4 gap-4">
+        <div class="col-span-3">
+          <h1 class="text-3xl font-bold pl-5">ข้อมูลสาขา</h1>
+        </div>
+
+        <div style="padding-right: 1.2rem; text-align: -webkit-right">
+          <svg class="w-[37px] h-[37px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+</svg>
+
+        </div>
+      </div>
+
+      <div class="grid gap-1 md:grid-cols-6 sm:grid-cols-6 xl:grid-cols-6">
+        <div class="col-span-4 lg:col-span-2" style="padding: 1.2rem">
           <div
             class="card bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
           >
@@ -26,8 +41,8 @@ import { Head } from "@inertiajs/vue3";
           </div>
         </div>
         <!-- ... -->
-        <div class="col-span-4">
-          <div class="branch-dd">
+        <div class="col-span-4 sm:col-span-4" style="padding: 1.2rem">
+          <div>
             <a href="#">
               <h5
                 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
@@ -36,17 +51,31 @@ import { Head } from "@inertiajs/vue3";
               </h5>
             </a>
 
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p class="mb-3 font-bold text-gray-700 dark:text-gray-400">
               ตรวจสภาพรถยนต์ รถจักรยานยนต์ พรบ. ปร
             </p>
 
             <a
               href="#"
-              class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+              class="flex items-center p-3 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
             >
-            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 0v6M9.5 9A2.5 2.5 0 0 1 12 6.5"/>
-</svg>
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 0v6M9.5 9A2.5 2.5 0 0 1 12 6.5"
+                />
+              </svg>
 
               <span class="flex-1 ms-3 whitespace-nowrap text-lg">
                 29/11 หมู่ 4 ถนนศรีจันทร์ ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น
@@ -56,7 +85,7 @@ import { Head } from "@inertiajs/vue3";
 
             <a
               href="#"
-              class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+              class="flex items-center p-3 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
             >
               <svg
                 class="w-6 h-6 text-gray-800 dark:text-white"
@@ -83,7 +112,7 @@ import { Head } from "@inertiajs/vue3";
 
             <a
               href="#"
-              class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+              class="flex items-center p-3 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
             >
               <svg
                 class="w-6 h-6 text-gray-800 dark:text-white"
@@ -104,123 +133,273 @@ import { Head } from "@inertiajs/vue3";
               <span class="flex-1 ms-3 whitespace-nowrap text-lg">
                 ตรอ พรบ ต่อทะเบียน ศูนย์ตรอ.ไอดี สาขาศรีจันทร์ </span
               >
-
-              
             </a>
-       
-       
 
-              <a
+            <a
               href="#"
-              class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+              class="flex items-center p-3 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
             >
-          
-
-              <span class="flex-1 ms-3 whitespace-nowrap">
-                - จองล่วงหน้าสูงสุด  30 วัน</span
+              <span class="flex-1 ms-3 whitespace-nowrap text-sm">
+                - จองล่วงหน้าสูงสุด 30 วัน</span
               >
-              <span class="flex-1 ms-3 whitespace-nowrap">
-               - ยกเลิกล่วงหน้าขั้นต่ำ  1 วัน</span
+              <span class="flex-1 ms-3 whitespace-nowrap text-sm">
+                - ยกเลิกล่วงหน้าขั้นต่ำ 1 วัน</span
               >
-
-              
             </a>
-              
           </div>
         </div>
       </div>
     </div>
 
-    <div class="p-4 border-2 border-gray-200 dark:border-gray-700 mt-14">
-      <div class="grid grid-cols-3 gap-4 mb-4">
-        <div
-          class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
-        >
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg
-              class="w-3.5 h-3.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 1v16M1 9h16"
-              />
-            </svg>
-          </p>
+    <br />
+
+   
+    <div class="container mx-auto p-4 crdfr">
+      <div class="grid grid-cols-4 gap-4">
+        <div class="col-span-3">
+          <h1 class="text-3xl font-bold pl-5">ข้อมูลบริการ</h1>
         </div>
-        <div
-          class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
-        >
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg
-              class="w-3.5 h-3.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 1v16M1 9h16"
-              />
-            </svg>
-          </p>
+
+        <div style="padding-right: 1.2rem; text-align: -webkit-right">
+      
+          <button type="button" class="px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+       +
+
+เพิ่มบริการ
+</button>
         </div>
-        <div
-          class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800"
-        >
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg
-              class="w-3.5 h-3.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 1v16M1 9h16"
-              />
-            </svg>
-          </p>
+      </div>
+
+      <div class="grid gap-1 md:grid-cols-3 sm:grid-cols-6 xl:grid-cols-3" style="
+    padding: 20px;
+">
+        <div class="col-span-4 lg:col-span-1 md:col-span-3" >
+          <div
+            class="card w-full max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="px-6 pb-6 pt-6">
+              <a href="#">
+                <h5
+                  class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"
+                  style="text-align: center"
+                >
+                  ตรวจสภาพรถยนต์
+                </h5>
+              </a>
+              <div class="flex items-center mt-2.5 mb-2">
+                <div
+                  class="flex items-center space-x-1 rtl:space-x-reverse"
+                ></div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >วันทำการ:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  จ อ พ พฤ ศ</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >เวลาทำการ:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  08:00 ถึง 18:00</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >เวลาพักกลางวัน:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  12:00 ถึง 13:00</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >จำนวนคิว / วัน:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  45 คิว</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >เวลา / คิว :
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  20 นาท</span
+                >
+              </div>
+             
+            </div>
+            <div class="card-hover">
+            <p class="text-lg" style="color: white;font-size: 24px;">ตั้งค่าบริการ</p>
+        </div>
+          </div>
+        </div>
+
+      
+
+        <div class="col-span-4 lg:col-span-1 md:col-span-3" >
+          <div
+            class="card w-full max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="px-6 pb-6 pt-6">
+              <a href="#">
+                <h5
+                  class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"
+                  style="text-align: center"
+                >
+                  ตรวจสภาพรถยนต์
+                </h5>
+              </a>
+              <div class="flex items-center mt-2.5 mb-2">
+                <div
+                  class="flex items-center space-x-1 rtl:space-x-reverse"
+                ></div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >วันทำการ:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  จ อ พ พฤ ศ</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >เวลาทำการ:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  08:00 ถึง 18:00</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >เวลาพักกลางวัน:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  12:00 ถึง 13:00</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >จำนวนคิว / วัน:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  45 คิว</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >เวลา / คิว :
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  20 นาท</span
+                >
+              </div>
+             
+            </div>
+            <div class="card-hover">
+            <p class="text-lg" style="color: white;font-size: 24px;">ตั้งค่าบริการ</p>
+        </div>
+          </div>
+        </div>
+
+        <div class="col-span-4 lg:col-span-1 md:col-span-3">
+          <div
+            class="card w-full max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="px-6 pb-6 pt-6">
+              <a href="#">
+                <h5
+                  class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"
+                  style="text-align: center"
+                >
+                  ตรวจสภาพรถยนต์
+                </h5>
+              </a>
+              <div class="flex items-center mt-2.5 mb-2">
+                <div
+                  class="flex items-center space-x-1 rtl:space-x-reverse"
+                ></div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >วันทำการ:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  จ อ พ พฤ ศ</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >เวลาทำการ:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  08:00 ถึง 18:00</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >เวลาพักกลางวัน:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  12:00 ถึง 13:00</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >จำนวนคิว / วัน:
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  45 คิว</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-gray-900 dark:text-white"
+                  >เวลา / คิว :
+                </span>
+                <span class="font-normal text-gray-900 dark:text-white">
+                  20 นาท</span
+                >
+              </div>
+             
+            </div>
+            <div class="card-hover">
+            <p class="text-lg" style="color: white;font-size: 24px;">ตั้งค่าบริการ</p>
+        </div>
+          </div>
         </div>
       </div>
     </div>
+
   </Authenbackend>
 </template>
 
 <style scoped>
-
 .branch-dd {
-    padding: 20px;
-
+  padding: 20px;
 }
 .crdfr {
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .text-lg {
-  font-size: 1.5rem; /* Default font size */
+  font-size: 0.9rem; /* Default font size */
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .text-lg {
     font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+
+  .text-sm {
+    font-size: 0.7rem; /* Adjust font size for smaller screens */
   }
 }
 
@@ -230,9 +409,60 @@ import { Head } from "@inertiajs/vue3";
     font-size: 0.6rem; /* Adjust font size for even smaller screens */
   }
 
+  .text-sm {
+    font-size: 0.7rem; /* Adjust font size for smaller screens */
+  }
+
   .branch-dd {
     padding: 1px;
+  }
+}
 
-}
-}
+.card {
+            position: relative;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .card-hover {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: top 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+        }
+
+        .card:hover .card-hover {
+            top: 0;
+            opacity: 1;
+            
+        }
+
+        .as:hover {
+       filter:blur(2px) brightness(60%);
+        }
+
 </style>

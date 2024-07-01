@@ -1,16 +1,6 @@
 <script setup>
-import { ref } from 'vue';
 
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
 
-import NavLink from '@/Components/NavLink.vue';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
-
-import Header from '@/Components/Header.vue';
-import Sidebar from '@/Components/Sidebar.vue';
 
 const showingNavigationDropdown = ref(false);
 
@@ -25,6 +15,11 @@ const logout = () => {
 
 <script>
 
+import { ref } from 'vue';
+import Header from '@/Components/Header.vue';
+import Sidebar from '@/Components/Sidebar.vue';
+import FlashMessage from '@/Components/FlashMessage.vue';
+import { Inertia } from '@inertiajs/inertia'
 
 export default {
   name: 'AdminLayout',
@@ -33,9 +28,20 @@ export default {
       sidebarOpen: false
     };
   },
+  components: {
+    FlashMessage,
+  },
+  props: {
+    flash: {
+      type: Object,
+      default: () => ({
+        type: '',
+        message: ''
+      }),
+    },
+  },
   methods: {
     toggleSidebar() {
-   
       this.sidebarOpen = !this.sidebarOpen;
     }
   }
@@ -71,6 +77,9 @@ export default {
 
 
    <main>
+
+
+    <FlashMessage v-if="$page.props.flash.success"  :type="$page.props.flash.type" :message="$page.props.flash.message" />
                 <slot />
             </main>
 
